@@ -2,9 +2,9 @@ import React from "react";
 import Header from "../../Shared/Header";
 import WashroomContainer from "../../Shared/WashroomContainer";
 import SearchBar from "../../Shared/SearchBar";
-//import { getWashrooms, getReviews } from "../../../actions.js";
+import { getWashrooms, getReviews } from "../../../actions.js";
 //import { getReviews } from "../../../actions/review";
-import { getWashrooms } from "../../../actions/washroom";
+// import { getWashrooms } from "../../../actions/washroom";
 
 import "./styles.css";
 import CampusMap from "./campusMap.js";
@@ -15,12 +15,18 @@ class Map extends React.Component {
     isAdmin: true,
     washrooms: [],
     highlight: null,
-    //reviews: getReviews(this),
+    reviews: getReviews(this),
   };
 
   constructor(props) {
     super(props);
-    getWashrooms(this)
+    this.state = {
+        isLoggedIn: true,
+        isAdmin: true,
+        washrooms: getWashrooms(),
+        highlight: null,
+        reviews: getReviews(),
+    };
     this.props.history.push("/map");
   }
 

@@ -42,8 +42,10 @@ class App extends React.Component {
                 <div>
                   {!currentUser ? (
                     <Login {...props} currentUser={currentUser} app={this} />
+                    // <Admin {...props} currentUser={currentUser} app={this} />
                   ) : (
                     <Admin {...props} currentUser={currentUser} app={this} />
+                    // <Login {...props} currentUser={currentUser} app={this} />
                   )}
                 </div>
               )}

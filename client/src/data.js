@@ -29,6 +29,8 @@ export const washrooms = [
     location: "Bahen Centre",
     amenities: "Baby Changing Station",
     gender: "Women",
+    coordinates: {lat: 10, lng: 50},
+    reviews: [0, 1],
   },
   {
     id: 1,
@@ -36,6 +38,7 @@ export const washrooms = [
     location: "Bahen Centre",
     amenities: "Baby Changing Station",
     gender: "Men",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 2,
@@ -43,6 +46,7 @@ export const washrooms = [
     location: "Myhal Centre",
     amenities: "",
     gender: "Women",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 3,
@@ -50,6 +54,7 @@ export const washrooms = [
     location: "Myhal Centre",
     amenities: "",
     gender: "Men",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 4,
@@ -57,6 +62,7 @@ export const washrooms = [
     location: "Hart House Building",
     amenities: "Baby Changing Station",
     gender: "Men",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 5,
@@ -64,6 +70,7 @@ export const washrooms = [
     location: "Hart House Building",
     amenities: "Baby Changing Station",
     gender: "Women",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 6,
@@ -71,6 +78,7 @@ export const washrooms = [
     location: "Varsity Centre",
     amenities: "",
     gender: "Gender Neutral",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 7,
@@ -78,6 +86,7 @@ export const washrooms = [
     location: "Convocation Hall",
     amenities: "Accessible Stalls",
     gender: "Women",
+    coordinates: {lat: 10, lng: 50},
   },
   {
     id: 8,
@@ -85,6 +94,7 @@ export const washrooms = [
     location: "Convocation Hall",
     amenities: "Accessible Stalls",
     gender: "Men",
+    coordinates: {lat: 10, lng: 50},
   },
 ];
 

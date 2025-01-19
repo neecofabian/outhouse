@@ -1,13 +1,14 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { getReviews } from "../../../actions/review";
+// import { getReviews } from "../../../actions/review";
+import { getReviews } from "../../../actions.js";
 import "./styles.css";
 import { Droplet, Tool, Lock } from "react-feather";
 import toilet from "../../../assets/toilet.png";
 
 class WashroomContainer extends React.Component {
   state = {
-    reviews: getReviews(this),
+    reviews: getReviews(),
   };
 
   constructor(props) {
@@ -46,11 +47,24 @@ class WashroomContainer extends React.Component {
         </div>
         <hr className="line" />
         <h3 className="bold">Reviews</h3>
+        {/* {console.log(this.state.reviews)} */}
         {this.state.reviews &&
           this.state.reviews.map((r) => {
             let review = null;
-            washroom.reviews.forEach((r_id) => {
-              if (r_id === r._id) {
+            {console.log(washroom.reviews)}
+            // review = {
+            //     id: 0,
+            //     washroom: washrooms[0],
+            //     date: "11/02/2021 11:34:22",
+            //     cleanliness: 2,
+            //     functionality: 3,
+            //     privacy: 1,
+            //     reviewContent: "So stinky. Completely disgusting.",
+            //     likes: 5,
+            //     dislikes: 2,
+            //   }
+            washroom.reviews?.forEach((r_id) => {
+              if (r_id == r.id) {
                 review = r;
               }
             });
@@ -58,7 +72,7 @@ class WashroomContainer extends React.Component {
               return (
                 <div
                   className="reviewContainer"
-                  key={String(review._id) + String(washroom._id)}
+                  key={String(review.id) + String(washroom.id)}
                 >
                   <p className="review">{review.content}</p>
                   
@@ -87,7 +101,7 @@ class WashroomContainer extends React.Component {
               return <></>;
             }
           })}
-        <a className="seeAllReviews" href={"/reviews/" + washroom._id}>
+        <a className="seeAllReviews" href={"/reviews/" + washroom.id}>
           Show more...
         </a>
 
@@ -101,7 +115,7 @@ class WashroomContainer extends React.Component {
               }}
               variant="outlined"
               size="small"
-              href={"/reviewform/" + washroom._id}
+              href={"/reviewform/" + washroom.id}
             >
               Leave a review
             </Button>
@@ -114,7 +128,7 @@ class WashroomContainer extends React.Component {
                 color: "#4A4E69",
               }}
               variant="outlined"
-              href={"/reportform/" + washroom._id}
+              href={"/reportform/" + washroom.id}
               size="small"
             >
               Make a report
